@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add New Vehicle | AutoSphere Admin</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo-placeholder.svg" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/admin.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <!-- Admin Sidebar -->
+      <aside class="admin-sidebar" id="admin-sidebar">
+        <div class="admin-sidebar-header">
+          <h2>AutoSphere</h2>
+          <span>ADMIN</span>
+        </div>
+
+        <nav class="admin-nav">
+          <a href="/admin/dashboard.html" class="admin-nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Dashboard
+          </a>
+          <a href="/admin/cars.html" class="admin-nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+            Manage Cars
+          </a>
+          <a href="/admin/add-car.html" class="admin-nav-item active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Add New Car
+          </a>
+          <a href="/cars.html" target="_blank" class="admin-nav-item" style="margin-top: 1.5rem; border-top: 1px solid #1e293b; padding-top: 1rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Public Showroom ↗
+          </a>
+          <a href="javascript:void(0)" onclick="window.openConfigModal ? window.openConfigModal() : null" class="admin-nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            System Setup
+          </a>
+        </nav>
+
+        <div class="admin-sidebar-footer">
+          <div class="admin-user-card">
+            <div class="admin-avatar" id="admin-sidebar-avatar">AD</div>
+            <div class="admin-user-details">
+              <div class="admin-user-name" id="admin-sidebar-name">Loading...</div>
+              <div class="admin-user-role" id="admin-sidebar-role">ADMINISTRATOR</div>
+            </div>
+          </div>
+          <button type="button" id="admin-logout-btn" class="btn btn-secondary btn-sm" style="width: 100%; color: #ef4444; border-color: #334155;">
+            Log Out
+          </button>
+        </div>
+      </aside>
+
+      <!-- Admin Main Area -->
+      <main class="admin-main">
+        <header class="admin-topbar">
+          <div class="admin-breadcrumb">
+            <span>Admin</span> / <a href="/admin/cars.html" style="color: var(--text-muted);">Inventory</a> / <strong>Add Car</strong>
+          </div>
+        </header>
+
+        <div class="admin-content-body">
+          <div class="admin-page-header">
+            <div class="admin-page-title">
+              <h1 id="form-page-title">Add New Vehicle Listing</h1>
+              <p>Enter certified specifications and upload high-resolution photographs.</p>
+            </div>
+          </div>
+
+          <form id="car-form" class="admin-card" style="padding: 2rem;">
+            <!-- Primary Identifiers -->
+            <h3 class="form-section-title" style="margin-top: 0;">1. Core Vehicle Information</h3>
+            <div class="form-grid-3">
+              <div class="form-group">
+                <label for="car-brand" class="form-label">Brand / Make *</label>
+                <input type="text" id="car-brand" class="form-control" placeholder="e.g. Hyundai" required />
+              </div>
+
+              <div class="form-group">
+                <label for="car-model" class="form-label">Model *</label>
+                <input type="text" id="car-model" class="form-control" placeholder="e.g. Creta" required />
+              </div>
+
+              <div class="form-group">
+                <label for="car-variant" class="form-label">Variant / Trim</label>
+                <input type="text" id="car-variant" class="form-control" placeholder="e.g. SX (O) 1.5 Turbo" />
+              </div>
+            </div>
+
+            <div class="form-grid-4" style="margin-top: 1rem;">
+              <div class="form-group">
+                <label for="car-year" class="form-label">Mfg Year *</label>
+                <input type="number" id="car-year" class="form-control" placeholder="2023" min="1980" max="2027" required />
+              </div>
+
+              <div class="form-group">
+                <label for="car-reg-year" class="form-label">Registration Year</label>
+                <input type="number" id="car-reg-year" class="form-control" placeholder="2023" min="1980" max="2027" />
+              </div>
+
+              <div class="form-group">
+                <label for="car-price" class="form-label">Price (INR) *</label>
+                <input type="number" id="car-price" class="form-control" placeholder="1450000" min="1" required />
+              </div>
+
+              <div class="form-group">
+                <label for="car-km" class="form-label">Kilometres Driven *</label>
+                <input type="number" id="car-km" class="form-control" placeholder="24000" min="0" required />
+              </div>
+            </div>
+
+            <!-- Technical & Mechanical Specs -->
+            <h3 class="form-section-title">2. Mechanical & Powertrain Specs</h3>
+            <div class="form-grid-4">
+              <div class="form-group">
+                <label for="car-fuel" class="form-label">Fuel Type *</label>
+                <select id="car-fuel" class="form-control" required>
+                  <option value="Petrol">Petrol</option>
+                  <option value="Diesel">Diesel</option>
+                  <option value="Electric">Electric</option>
+                  <option value="Hybrid">Hybrid</option>
+                  <option value="CNG">CNG</option>
+                  <option value="LPG">LPG</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="car-transmission" class="form-label">Transmission *</label>
+                <select id="car-transmission" class="form-control" required>
+                  <option value="Manual">Manual</option>
+                  <option value="Automatic">Automatic</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="car-ownership" class="form-label">Ownership Count *</label>
+                <select id="car-ownership" class="form-control" required>
+                  <option value="1">1st Owner</option>
+                  <option value="2">2nd Owner</option>
+                  <option value="3">3rd Owner</option>
+                  <option value="4">4+ Owners</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="car-engine" class="form-label">Engine Capacity</label>
+                <input type="text" id="car-engine" class="form-control" placeholder="e.g. 1498 cc" />
+              </div>
+            </div>
+
+            <div class="form-grid-4" style="margin-top: 1rem;">
+              <div class="form-group">
+                <label for="car-body-type" class="form-label">Body Style</label>
+                <select id="car-body-type" class="form-control">
+                  <option value="">Select Body Type</option>
+                  <option value="SUV">SUV</option>
+                  <option value="Sedan">Sedan</option>
+                  <option value="Hatchback">Hatchback</option>
+                  <option value="MUV">MUV</option>
+                  <option value="Coupe">Coupe</option>
+                  <option value="Convertible">Convertible</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="car-exterior-color" class="form-label">Exterior Color</label>
+                <input type="text" id="car-exterior-color" class="form-control" placeholder="e.g. Pearl White" />
+              </div>
+
+              <div class="form-group">
+                <label for="car-seating" class="form-label">Seating Capacity</label>
+                <input type="number" id="car-seating" class="form-control" placeholder="5" min="2" max="10" />
+              </div>
+
+              <div class="form-group">
+                <label for="car-reg-state" class="form-label">Registration State</label>
+                <input type="text" id="car-reg-state" class="form-control" placeholder="e.g. KA, MH, DL, TN" />
+              </div>
+            </div>
+
+            <!-- Verification & Condition -->
+            <h3 class="form-section-title">3. Certification, History & Condition</h3>
+            <div class="form-grid-4">
+              <div class="form-group">
+                <label for="car-condition" class="form-label">Overall Condition *</label>
+                <select id="car-condition" class="form-control" required>
+                  <option value="Excellent">Excellent (Like New)</option>
+                  <option value="Very Good">Very Good</option>
+                  <option value="Good">Good</option>
+                  <option value="Fair">Fair</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="car-insurance-status" class="form-label">Insurance Type</label>
+                <select id="car-insurance-status" class="form-control">
+                  <option value="">Select Insurance</option>
+                  <option value="Comprehensive">Comprehensive</option>
+                  <option value="Zero Depreciation">Zero Depreciation</option>
+                  <option value="Third Party">Third Party</option>
+                  <option value="Expired">Expired</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="car-insurance-expiry" class="form-label">Insurance Expiry Date</label>
+                <input type="date" id="car-insurance-expiry" class="form-control" />
+              </div>
+
+              <div class="form-group">
+                <label for="car-service-history" class="form-label">Service History</label>
+                <select id="car-service-history" class="form-control">
+                  <option value="Full Dealer Record">Full Dealer Record</option>
+                  <option value="Partial Dealer Record">Partial Dealer Record</option>
+                  <option value="Independent Garage">Independent Garage</option>
+                  <option value="Not Available">Not Available</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-grid-3" style="margin-top: 1rem;">
+              <div class="form-group">
+                <label for="car-accident-history" class="form-label">Accident History</label>
+                <select id="car-accident-history" class="form-control">
+                  <option value="Clean / No Accidents">Clean / No Accidents</option>
+                  <option value="Minor Scratches Repaired">Minor Scratches Repaired</option>
+                  <option value="Repaired Prior Damage">Repaired Prior Damage</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="car-status" class="form-label">Availability Status *</label>
+                <select id="car-status" class="form-control" required>
+                  <option value="available">Available (Public)</option>
+                  <option value="reserved">Reserved (Customer Hold)</option>
+                  <option value="sold">Sold Out</option>
+                </select>
+              </div>
+
+              <div class="form-group" style="display: flex; align-items: flex-end; padding-bottom: 0.5rem;">
+                <label style="display: flex; align-items: center; gap: 0.5rem; font-weight: 600; cursor: pointer;">
+                  <input type="checkbox" id="car-featured" style="width: 18px; height: 18px;" />
+                  <span>Feature on Homepage Spotlight</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group" style="margin-top: 1.25rem;">
+              <label for="car-description" class="form-label">Vehicle Description & Dealer Notes *</label>
+              <textarea id="car-description" class="form-control" rows="4" placeholder="Highlight key features, sunroof, leather seats, tire condition, battery health, and warranty inclusions..." required></textarea>
+            </div>
+
+            <!-- Multi-Image Dropzone & Previews -->
+            <h3 class="form-section-title">4. Vehicle Photographs (Appwrite Storage)</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 1rem;">
+              Upload JPEG, PNG, or WebP photos (Max 5MB each). Star a photo to set it as the primary display image.
+            </p>
+
+            <div id="image-dropzone" class="image-uploader-box">
+              <svg class="uploader-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+              <div class="uploader-text">Drag & drop vehicle photos here, or click to browse</div>
+              <div class="uploader-subtext">Supports multiple files simultaneously</div>
+              <input type="file" id="image-file-input" multiple accept="image/jpeg,image/png,image/webp" style="display: none;" />
+            </div>
+
+            <!-- Previews -->
+            <div id="image-preview-grid" class="image-preview-grid"></div>
+
+            <!-- Form Action Footer -->
+            <div style="display: flex; justify-content: flex-end; gap: 1rem; margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+              <a href="/admin/cars.html" class="btn btn-secondary btn-md">Cancel</a>
+              <button type="submit" id="submit-car-btn" class="btn btn-primary btn-md">
+                Publish Vehicle Listing
+              </button>
+            </div>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/assets/js/admin-auth.js"></script>
+    <script type="module" src="/assets/js/car-form.js"></script>
+  </body>
+</html>

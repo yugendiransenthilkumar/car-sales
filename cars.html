@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Certified Used Cars Inventory | AutoSphere</title>
+    <meta name="description" content="Search and filter our complete inventory of inspected used cars by brand, price, year, fuel type, transmission, and mileage." />
+    <meta property="og:title" content="Certified Used Cars Inventory | AutoSphere" />
+    <meta property="og:description" content="Explore certified pre-owned vehicles with verified inspection reports and instant WhatsApp purchase enquiries." />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo-placeholder.svg" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Site Header -->
+    <header class="site-header">
+      <div class="container nav-container">
+        <a href="/" class="brand-link" aria-label="AutoSphere Home">
+          <img src="/assets/images/logo-placeholder.svg" alt="AutoSphere Certified Used Cars" />
+        </a>
+
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/cars.html" class="nav-link active">Browse Inventory</a></li>
+            <li><a href="/contact.html" class="nav-link">About & Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <div id="nav-auth-slot"></div>
+          <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="section" style="padding-top: 2.5rem;">
+      <div class="container">
+        <!-- Breadcrumb & Page Title -->
+        <div style="margin-bottom: 2rem;">
+          <h1 style="font-size: 2.25rem; font-weight: 800; color: var(--text-main); letter-spacing: -0.5px;">
+            Pre-Owned Vehicle Inventory
+          </h1>
+          <p style="color: var(--text-muted); font-size: 1rem; margin-top: 0.25rem;">
+            Every car includes a 150-point inspection report, non-accidental guarantee, and transparent pricing.
+          </p>
+        </div>
+
+        <!-- Inventory Layout: Sidebar Filters + Main Grid -->
+        <div class="inventory-layout">
+          <!-- Filter Sidebar -->
+          <aside class="filters-sidebar">
+            <div class="filters-header">
+              <h3>Filters</h3>
+              <button type="button" id="clear-filters-btn" class="filters-clear-btn">Reset All</button>
+            </div>
+
+            <form id="inventory-filter-form">
+              <!-- Search keyword -->
+              <div class="filter-group">
+                <label for="filter-search" class="filter-group-title">Search Vehicle</label>
+                <input type="text" id="filter-search" class="form-control" placeholder="Search make, model, variant..." />
+              </div>
+
+              <!-- Brand -->
+              <div class="filter-group">
+                <label for="filter-brand" class="filter-group-title">Make / Brand</label>
+                <select id="filter-brand" class="form-control">
+                  <option value="">All Brands</option>
+                  <option value="Maruti Suzuki">Maruti Suzuki</option>
+                  <option value="Hyundai">Hyundai</option>
+                  <option value="Tata">Tata Motors</option>
+                  <option value="Mahindra">Mahindra</option>
+                  <option value="Honda">Honda</option>
+                  <option value="Toyota">Toyota</option>
+                  <option value="Kia">Kia</option>
+                  <option value="Volkswagen">Volkswagen</option>
+                  <option value="Skoda">Skoda</option>
+                  <option value="BMW">BMW</option>
+                  <option value="Mercedes-Benz">Mercedes-Benz</option>
+                  <option value="Audi">Audi</option>
+                </select>
+              </div>
+
+              <!-- Price Range -->
+              <div class="filter-group">
+                <span class="filter-group-title">Budget (INR)</span>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.25rem;">
+                  <input type="number" id="filter-min-price" class="form-control" placeholder="Min ₹" step="25000" />
+                  <input type="number" id="filter-max-price" class="form-control" placeholder="Max ₹" step="25000" />
+                </div>
+              </div>
+
+              <!-- Year -->
+              <div class="filter-group">
+                <label for="filter-year" class="filter-group-title">Model Year</label>
+                <select id="filter-year" class="form-control">
+                  <option value="">Any Year</option>
+                  <option value="2025">2025</option>
+                  <option value="2024">2024</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                </select>
+              </div>
+
+              <!-- Fuel Type -->
+              <div class="filter-group">
+                <label for="filter-fuel" class="filter-group-title">Fuel Type</label>
+                <select id="filter-fuel" class="form-control">
+                  <option value="">All Fuel Types</option>
+                  <option value="Petrol">Petrol</option>
+                  <option value="Diesel">Diesel</option>
+                  <option value="Electric">Electric</option>
+                  <option value="Hybrid">Hybrid</option>
+                  <option value="CNG">CNG</option>
+                  <option value="LPG">LPG</option>
+                </select>
+              </div>
+
+              <!-- Transmission -->
+              <div class="filter-group">
+                <label for="filter-transmission" class="filter-group-title">Transmission</label>
+                <select id="filter-transmission" class="form-control">
+                  <option value="">All Transmissions</option>
+                  <option value="Manual">Manual</option>
+                  <option value="Automatic">Automatic</option>
+                </select>
+              </div>
+
+              <!-- Max Kilometres -->
+              <div class="filter-group">
+                <label for="filter-max-km" class="filter-group-title">Max Kilometres Driven</label>
+                <select id="filter-max-km" class="form-control">
+                  <option value="">Any Kilometres</option>
+                  <option value="15000">Under 15,000 km</option>
+                  <option value="30000">Under 30,000 km</option>
+                  <option value="50000">Under 50,000 km</option>
+                  <option value="75000">Under 75,000 km</option>
+                  <option value="100000">Under 1,00,000 km</option>
+                </select>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-sm" style="width: 100%; margin-top: 0.5rem;">
+                Apply Filters
+              </button>
+            </form>
+          </aside>
+
+          <!-- Main Inventory View -->
+          <div>
+            <!-- Toolbar: Results Count & Sort Dropdown -->
+            <div class="inventory-toolbar">
+              <div id="cars-count" class="inventory-count">
+                Showing <strong>0</strong> cars
+              </div>
+
+              <div class="inventory-sort">
+                <label for="sort-select">Sort By:</label>
+                <select id="sort-select" class="form-control" style="width: auto; padding: 0.4rem 0.75rem; font-size: 0.85rem;">
+                  <option value="created_at-desc">Newest Listings First</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="manufacturing_year-desc">Year: Newest to Oldest</option>
+                  <option value="kilometres_driven-asc">Kilometres: Lowest First</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Cars Grid Container -->
+            <div id="cars-grid" class="car-grid">
+              <div class="loading-indicator" style="grid-column: 1 / -1;">
+                <div class="spinner"></div>
+                <p>Loading inventory from database...</p>
+              </div>
+            </div>
+
+            <!-- Pagination Container -->
+            <div id="cars-pagination"></div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="/assets/images/logo-placeholder.svg" alt="AutoSphere" style="filter: brightness(0) invert(1); height: 40px;" />
+            <p>
+              AutoSphere is a premier certified pre-owned automotive dealership dedicated to transparent pricing, mechanical integrity, and peace of mind.
+            </p>
+          </div>
+
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/cars.html">All Available Cars</a></li>
+              <li><a href="/contact.html">Contact & Showroom</a></li>
+              <li><a href="/login.html">Customer Login</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Inventory Categories</h4>
+            <ul class="footer-links">
+              <li><a href="/cars.html?fuelType=Petrol">Petrol Cars</a></li>
+              <li><a href="/cars.html?fuelType=Diesel">Diesel Cars</a></li>
+              <li><a href="/cars.html?fuelType=Electric">Electric & Hybrid</a></li>
+              <li><a href="/cars.html?transmission=Automatic">Automatic Transmission</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Dealership Portal</h4>
+            <ul class="footer-links">
+              <li><a href="/admin/dashboard.html">Admin Console</a></li>
+              <li><a href="/admin/add-car.html">List New Vehicle</a></li>
+              <li><a href="/admin/cars.html">Manage Inventory</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 AutoSphere Certified Cars. All rights reserved.</p>
+          <p style="color: #64748b;">Powered by Supabase Database & Appwrite Storage</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="/assets/js/cars.js"></script>
+  </body>
+</html>

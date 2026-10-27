@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500" fill="none">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#e2e8f0"/>
+    </linearGradient>
+    <linearGradient id="carGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <!-- Background -->
+  <rect width="800" height="500" fill="url(#bgGrad)"/>
+  <rect x="20" y="20" width="760" height="460" rx="16" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="8 8" fill="none"/>
+  
+  <!-- Subtle Studio Floor Grid -->
+  <ellipse cx="400" cy="380" rx="280" ry="24" fill="#94a3b8" opacity="0.25"/>
+
+  <!-- Modern Car Vector Silhouette -->
+  <g transform="translate(180, 150)">
+    <path d="M 60,140 
+             L 110,60 
+             Q 130,30 170,25 
+             L 280,25 
+             Q 320,30 350,65 
+             L 410,120 
+             L 440,135 
+             Q 450,145 450,165 
+             L 440,185 
+             Q 430,195 410,195 
+             L 360,195 
+             A 38,38 0 0,0 284,195 
+             L 160,195 
+             A 38,38 0 0,0 84,195 
+             L 40,195 
+             Q 15,195 10,175 
+             L 10,150 
+             Q 15,140 40,140 
+             Z" 
+          fill="url(#carGrad)" opacity="0.9"/>
+    
+    <!-- Windshield & Windows -->
+    <path d="M 125,65 L 175,35 L 265,35 L 265,115 L 90,115 Z" fill="#ffffff" opacity="0.8"/>
+    <path d="M 280,35 L 340,65 L 375,115 L 280,115 Z" fill="#ffffff" opacity="0.8"/>
+    
+    <!-- Headlights & Taillights -->
+    <path d="M 420,135 L 442,142 L 438,155 L 415,150 Z" fill="#fef08a"/>
+    <path d="M 15,150 L 30,150 L 30,165 L 12,165 Z" fill="#ef4444"/>
+
+    <!-- Wheels -->
+    <!-- Front Wheel -->
+    <circle cx="322" cy="195" r="34" fill="#1e293b"/>
+    <circle cx="322" cy="195" r="22" fill="#64748b"/>
+    <circle cx="322" cy="195" r="9" fill="#0f172a"/>
+
+    <!-- Rear Wheel -->
+    <circle cx="122" cy="195" r="34" fill="#1e293b"/>
+    <circle cx="122" cy="195" r="22" fill="#64748b"/>
+    <circle cx="122" cy="195" r="9" fill="#0f172a"/>
+  </g>
+
+  <!-- Placeholder Label -->
+  <text x="400" y="415" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="20" font-weight="700" fill="#475569" text-anchor="middle">
+    AutoSphere Verified Vehicle
+  </text>
+  <text x="400" y="440" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="14" font-weight="500" fill="#94a3b8" text-anchor="middle">
+    High-Resolution Photography Coming Soon
+  </text>
+</svg>

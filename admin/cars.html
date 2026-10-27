@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Manage Vehicle Inventory | AutoSphere Admin</title>
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo-placeholder.svg" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/admin.css" />
+  </head>
+  <body>
+    <div class="admin-layout">
+      <!-- Admin Sidebar -->
+      <aside class="admin-sidebar" id="admin-sidebar">
+        <div class="admin-sidebar-header">
+          <h2>AutoSphere</h2>
+          <span>ADMIN</span>
+        </div>
+
+        <nav class="admin-nav">
+          <a href="/admin/dashboard.html" class="admin-nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+            Dashboard
+          </a>
+          <a href="/admin/cars.html" class="admin-nav-item active">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+            Manage Cars
+          </a>
+          <a href="/admin/add-car.html" class="admin-nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            Add New Car
+          </a>
+          <a href="/cars.html" target="_blank" class="admin-nav-item" style="margin-top: 1.5rem; border-top: 1px solid #1e293b; padding-top: 1rem;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            Public Showroom ↗
+          </a>
+          <a href="javascript:void(0)" onclick="window.openConfigModal ? window.openConfigModal() : null" class="admin-nav-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            System Setup
+          </a>
+        </nav>
+
+        <div class="admin-sidebar-footer">
+          <div class="admin-user-card">
+            <div class="admin-avatar" id="admin-sidebar-avatar">AD</div>
+            <div class="admin-user-details">
+              <div class="admin-user-name" id="admin-sidebar-name">Loading...</div>
+              <div class="admin-user-role" id="admin-sidebar-role">ADMINISTRATOR</div>
+            </div>
+          </div>
+          <button type="button" id="admin-logout-btn" class="btn btn-secondary btn-sm" style="width: 100%; color: #ef4444; border-color: #334155;">
+            Log Out
+          </button>
+        </div>
+      </aside>
+
+      <!-- Admin Main Area -->
+      <main class="admin-main">
+        <header class="admin-topbar">
+          <div class="admin-breadcrumb">
+            <span>Admin</span> / <strong>Vehicle Inventory</strong>
+          </div>
+
+          <div class="admin-topbar-actions">
+            <a href="/admin/add-car.html" class="btn btn-primary btn-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+              Add New Car
+            </a>
+          </div>
+        </header>
+
+        <div class="admin-content-body">
+          <div class="admin-page-header">
+            <div class="admin-page-title">
+              <h1>Inventory Management</h1>
+              <p>Search, update status, edit details, or safely remove vehicle listings.</p>
+            </div>
+          </div>
+
+          <div class="admin-card">
+            <div class="admin-card-header">
+              <div style="font-weight: 600; font-size: 0.95rem; color: var(--text-muted);">
+                Total Listed: <strong id="admin-cars-total-count" style="color: var(--text-main);">0</strong>
+              </div>
+
+              <div class="admin-table-filters">
+                <input type="text" id="admin-car-search" class="form-control" placeholder="Search make, model, listing #..." style="width: 240px; font-size: 0.85rem; padding: 0.4rem 0.75rem;" />
+                
+                <select id="admin-status-filter" class="form-control" style="width: auto; font-size: 0.85rem; padding: 0.4rem 0.75rem;">
+                  <option value="All">All Statuses</option>
+                  <option value="available">Available Only</option>
+                  <option value="reserved">Reserved Only</option>
+                  <option value="sold">Sold Only</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="admin-table">
+                <thead>
+                  <tr>
+                    <th>Photo</th>
+                    <th>Listing #</th>
+                    <th>Vehicle Details</th>
+                    <th>Asking Price</th>
+                    <th>Mileage</th>
+                    <th>Availability Status</th>
+                    <th>Date Listed</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="admin-cars-tbody">
+                  <tr>
+                    <td colspan="8" style="text-align: center; padding: 3rem;">
+                      <div class="spinner" style="margin: 0 auto 0.75rem;"></div>
+                      <p style="color: var(--text-muted);">Loading inventory from Supabase...</p>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <!-- Scripts -->
+    <script type="module" src="/assets/js/admin-auth.js"></script>
+    <script type="module" src="/assets/js/admin-cars.js"></script>
+  </body>
+</html>

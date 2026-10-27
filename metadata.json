@@ -1,0 +1,6 @@
+{
+  "name": "AutoSphere Used Car Dealership",
+  "description": "A production-grade second-hand car sales marketplace and inventory management portal powered by Supabase, Appwrite Storage, and WhatsApp enquiry integration.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

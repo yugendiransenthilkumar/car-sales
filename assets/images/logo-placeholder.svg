@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80" width="320" height="80" fill="none">
+  <defs>
+    <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#dc2626"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+  </defs>
+  <!-- Car Silhouette Icon Badge -->
+  <rect x="8" y="10" width="60" height="60" rx="14" fill="url(#logoGrad)"/>
+  <path d="M22 47 L28 32 C29 29 32 27 36 27 L50 27 C54 27 57 29 58 32 L64 47 M20 47 L66 47 C68 47 69 48 69 50 L68 53 C68 55 66 56 64 56 L62 56 C62 59 59 61 56 61 C53 61 50 59 50 56 L36 56 C36 59 33 61 30 61 C27 61 24 59 24 56 L22 56 C20 56 18 55 18 53 L17 50 C17 48 18 47 20 47 Z" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="30" cy="56" r="3" fill="#ffffff"/>
+  <circle cx="56" cy="56" r="3" fill="#ffffff"/>
+  <circle cx="38" cy="23" r="3" fill="url(#accentGrad)"/>
+
+  <!-- Brand Typography -->
+  <text x="82" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="26" font-weight="800" fill="#0f172a" letter-spacing="-0.5">
+    Auto<tspan fill="#2563eb">Sphere</tspan>
+  </text>
+  <text x="83" y="58" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="11" font-weight="600" fill="#64748b" letter-spacing="1.5">
+    CERTIFIED PRE-OWNED CARS
+  </text>
+</svg>

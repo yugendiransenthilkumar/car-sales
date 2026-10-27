@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AutoSphere Admin Console</title>
+    <script type="module">
+      import { getCurrentUser, isCurrentUserAdmin } from '/assets/js/auth.js';
+      
+      document.addEventListener('DOMContentLoaded', async () => {
+        const user = await getCurrentUser();
+        if (!user) {
+          window.location.replace('/login.html?redirect=/admin/dashboard.html');
+          return;
+        }
+
+        const isAdmin = await isCurrentUserAdmin();
+        if (isAdmin) {
+          window.location.replace('/admin/dashboard.html');
+        } else {
+          window.location.replace('/cars.html');
+        }
+      });
+    </script>
+  </head>
+  <body style="font-family: sans-serif; display: flex; align-items: center; justify-content: center; height: 100vh; background: #f8fafc; color: #475569;">
+    <div style="text-align: center;">
+      <div style="width: 32px; height: 32px; border: 3px solid #cbd5e1; border-top-color: #1e3a8a; border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 1rem;"></div>
+      <p>Routing to Dealership Administration Console...</p>
+    </div>
+    <style>
+      @keyframes spin { to { transform: rotate(360deg); } }
+    </style>
+  </body>
+</html>

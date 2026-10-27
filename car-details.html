@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vehicle Details | AutoSphere</title>
+    <meta name="description" content="View verified specifications, multi-angle photos, and ownership history for this certified pre-owned car." />
+    <meta property="og:title" content="Vehicle Details | AutoSphere" />
+    <meta property="og:description" content="Verified inspection report, transparent pricing, and instant WhatsApp purchase enquiry." />
+    <link rel="icon" type="image/svg+xml" href="/assets/images/logo-placeholder.svg" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+  </head>
+  <body>
+    <!-- Site Header -->
+    <header class="site-header">
+      <div class="container nav-container">
+        <a href="/" class="brand-link" aria-label="AutoSphere Home">
+          <img src="/assets/images/logo-placeholder.svg" alt="AutoSphere Certified Used Cars" />
+        </a>
+
+        <nav>
+          <ul class="nav-menu">
+            <li><a href="/" class="nav-link">Home</a></li>
+            <li><a href="/cars.html" class="nav-link active">Browse Inventory</a></li>
+            <li><a href="/contact.html" class="nav-link">About & Contact</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <div id="nav-auth-slot"></div>
+          <button type="button" class="mobile-menu-toggle" aria-label="Toggle navigation menu">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="section" style="padding-top: 2rem;">
+      <div class="container">
+        <!-- Back Link Navigation -->
+        <div style="margin-bottom: 1.5rem;">
+          <a href="/cars.html" style="display: inline-flex; align-items: center; gap: 0.4rem; font-size: 0.9rem; font-weight: 600; color: var(--primary);">
+            ← Back to All Cars
+          </a>
+        </div>
+
+        <!-- Dynamic Car Details Container (Populated by car-details.js) -->
+        <div id="car-details-container">
+          <div class="loading-indicator">
+            <div class="spinner"></div>
+            <p>Retrieving verified vehicle dossier...</p>
+          </div>
+        </div>
+
+        <!-- Related Vehicles Section -->
+        <section style="margin-top: 5rem; padding-top: 3rem; border-top: 1px solid var(--border);">
+          <div class="section-header">
+            <div>
+              <span class="badge badge-outline" style="margin-bottom: 0.5rem;">Alternative Options</span>
+              <h2 class="section-title" style="font-size: 1.75rem;">Similar Available Cars</h2>
+              <p class="section-subtitle">Other handpicked models in the same category or budget tier</p>
+            </div>
+            <a href="/cars.html" class="btn btn-secondary btn-sm">View Complete Inventory →</a>
+          </div>
+
+          <div id="related-cars-grid" class="car-grid">
+            <div class="loading-indicator" style="grid-column: 1 / -1;">
+              <div class="spinner"></div>
+              <p>Searching related cars...</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <img src="/assets/images/logo-placeholder.svg" alt="AutoSphere" style="filter: brightness(0) invert(1); height: 40px;" />
+            <p>
+              AutoSphere is a premier certified pre-owned automotive dealership dedicated to transparent pricing, mechanical integrity, and peace of mind.
+            </p>
+          </div>
+
+          <div class="footer-column">
+            <h4>Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="/">Home</a></li>
+              <li><a href="/cars.html">All Available Cars</a></li>
+              <li><a href="/contact.html">Contact & Showroom</a></li>
+              <li><a href="/login.html">Customer Login</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Inventory Categories</h4>
+            <ul class="footer-links">
+              <li><a href="/cars.html?fuelType=Petrol">Petrol Cars</a></li>
+              <li><a href="/cars.html?fuelType=Diesel">Diesel Cars</a></li>
+              <li><a href="/cars.html?fuelType=Electric">Electric & Hybrid</a></li>
+              <li><a href="/cars.html?transmission=Automatic">Automatic Transmission</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h4>Dealership Portal</h4>
+            <ul class="footer-links">
+              <li><a href="/admin/dashboard.html">Admin Console</a></li>
+              <li><a href="/admin/add-car.html">List New Vehicle</a></li>
+              <li><a href="/admin/cars.html">Manage Inventory</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>© 2026 AutoSphere Certified Cars. All rights reserved.</p>
+          <p style="color: #64748b;">Powered by Supabase Database & Appwrite Storage</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="/assets/js/car-details.js"></script>
+  </body>
+</html>
